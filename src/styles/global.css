@@ -1,44 +1,381 @@
 @import "tailwindcss";
 
-/* Custom theme colors for Runaway Train Café */
+/* ═══════════════════════════════════════════════════════════════
+   RUNAWAY TRAIN CAFÉ — Design System
+   Visual Storyteller + UX Architect Foundation
+   ═══════════════════════════════════════════════════════════════ */
+
 :root {
+  /* Brand Colors */
   --train-red: #8D2424;
+  --train-red-dark: #6B1C1C;
   --train-cream: #FDF8F3;
+  --train-cream-dark: #F5EDE4;
   --train-brown: #3D2314;
+  --train-brown-light: #5C3A28;
   --train-gold: #C9A227;
+  --train-gold-light: #E0BC4A;
   --train-charcoal: #2C2C2C;
+  
+  /* Semantic Colors */
+  --bg-primary: var(--train-cream);
+  --bg-dark: var(--train-brown);
+  --text-primary: var(--train-brown);
+  --text-light: var(--train-cream);
+  --accent: var(--train-red);
+  --highlight: var(--train-gold);
+  
+  /* Typography Scale */
+  --text-xs: 0.75rem;
+  --text-sm: 0.875rem;
+  --text-base: 1rem;
+  --text-lg: 1.125rem;
+  --text-xl: 1.25rem;
+  --text-2xl: 1.5rem;
+  --text-3xl: 2rem;
+  --text-4xl: 2.5rem;
+  --text-5xl: 3.5rem;
+  
+  /* Spacing */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-6: 1.5rem;
+  --space-8: 2rem;
+  --space-12: 3rem;
+  --space-16: 4rem;
+  --space-20: 5rem;
+  
+  /* Shadows for depth and text separation */
+  --shadow-text: 0 2px 4px rgba(0, 0, 0, 0.5);
+  --shadow-text-heavy: 0 4px 12px rgba(0, 0, 0, 0.7);
+  --shadow-card: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+  --shadow-card-hover: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+  
+  /* Transitions */
+  --transition-fast: 150ms ease;
+  --transition-normal: 300ms ease;
 }
 
-/* Custom utilities */
+/* ═══════════════════════════════════════════════════════════════
+   UTILITY CLASSES
+   ═══════════════════════════════════════════════════════════════ */
+
 @layer utilities {
+  /* Colors */
   .text-train-red { color: var(--train-red); }
   .bg-train-red { background-color: var(--train-red); }
   .text-train-cream { color: var(--train-cream); }
   .bg-train-cream { background-color: var(--train-cream); }
   .text-train-brown { color: var(--train-brown); }
   .bg-train-brown { background-color: var(--train-brown); }
+  .text-train-gold { color: var(--train-gold); }
+  .bg-train-gold { background-color: var(--train-gold); }
   .border-train-red { border-color: var(--train-red); }
+  .border-train-gold { border-color: var(--train-gold); }
+  
+  /* TEXT VISIBILITY ON IMAGES — Critical for readability */
+  .text-shadow {
+    text-shadow: var(--shadow-text);
+  }
+  
+  .text-shadow-heavy {
+    text-shadow: var(--shadow-text-heavy);
+  }
+  
+  .text-shadow-glow {
+    text-shadow: 
+      0 0 20px rgba(0, 0, 0, 0.8),
+      0 0 40px rgba(0, 0, 0, 0.6),
+      0 2px 4px rgba(0, 0, 0, 0.9);
+  }
+  
+  /* Backdrop blur for text containers over images */
+  .text-container-glass {
+    background: rgba(61, 35, 20, 0.85);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border-radius: 1rem;
+    padding: var(--space-8);
+  }
+  
+  /* Gradient overlays for image backgrounds */
+  .overlay-dark {
+    background: linear-gradient(
+      to bottom,
+      rgba(61, 35, 20, 0.4) 0%,
+      rgba(61, 35, 20, 0.7) 50%,
+      rgba(61, 35, 20, 0.9) 100%
+    );
+  }
+  
+  .overlay-vignette {
+    background: radial-gradient(
+      ellipse at center,
+      transparent 0%,
+      rgba(61, 35, 20, 0.3) 50%,
+      rgba(61, 35, 20, 0.8) 100%
+    );
+  }
+  
+  /* Card hover effects */
+  .card-hover {
+    transition: transform var(--transition-normal), box-shadow var(--transition-normal);
+  }
+  
+  .card-hover:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-card-hover);
+  }
 }
 
-/* Typography */
-body {
-  font-family: 'Georgia', serif;
-  background-color: var(--train-cream);
-  color: var(--train-brown);
-}
+/* ═══════════════════════════════════════════════════════════════
+   BASE TYPOGRAPHY
+   ═══════════════════════════════════════════════════════════════ */
 
-h1, h2, h3, h4 {
-  font-family: 'Georgia', serif;
-  font-weight: 700;
-}
-
-/* Smooth scrolling */
 html {
   scroll-behavior: smooth;
 }
 
-/* Mobile-first responsive images */
+body {
+  font-family: 'Lora', Georgia, serif;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-weight: 700;
+  line-height: 1.2;
+  text-wrap: balance;
+}
+
+/* Headings on dark/image backgrounds need shadow */
+.dark-bg h1,
+.dark-bg h2,
+.dark-bg h3,
+.image-bg h1,
+.image-bg h2,
+.image-bg h3 {
+  text-shadow: var(--shadow-text-heavy);
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   HERO SECTIONS — Maximum text visibility
+   ═══════════════════════════════════════════════════════════════ */
+
+.hero-section {
+  position: relative;
+}
+
+.hero-section::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(61, 35, 20, 0.5) 0%,
+    rgba(61, 35, 20, 0.65) 30%,
+    rgba(61, 35, 20, 0.8) 70%,
+    rgba(61, 35, 20, 0.9) 100%
+  );
+  z-index: 1;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 10;
+}
+
+.hero-title {
+  font-size: clamp(2.5rem, 8vw, 4.5rem);
+  font-weight: 700;
+  color: var(--train-cream);
+  text-shadow: 
+    0 2px 4px rgba(0, 0, 0, 0.8),
+    0 4px 8px rgba(0, 0, 0, 0.6),
+    0 8px 16px rgba(0, 0, 0, 0.4);
+  letter-spacing: -0.02em;
+}
+
+.hero-subtitle {
+  font-size: clamp(1.125rem, 3vw, 1.5rem);
+  color: rgba(253, 248, 243, 0.95);
+  text-shadow: 
+    0 1px 3px rgba(0, 0, 0, 0.8),
+    0 2px 6px rgba(0, 0, 0, 0.5);
+  max-width: 42ch;
+  margin-inline: auto;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   BUTTONS — High contrast, clear CTAs
+   ═══════════════════════════════════════════════════════════════ */
+
+.btn-primary {
+  background-color: var(--train-red);
+  color: white;
+  font-weight: 700;
+  padding: var(--space-4) var(--space-8);
+  border-radius: 9999px;
+  transition: all var(--transition-fast);
+  box-shadow: 0 4px 14px rgba(141, 36, 36, 0.4);
+}
+
+.btn-primary:hover {
+  background-color: var(--train-red-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(141, 36, 36, 0.5);
+}
+
+.btn-secondary {
+  background-color: transparent;
+  color: var(--train-cream);
+  font-weight: 700;
+  padding: var(--space-4) var(--space-8);
+  border: 2px solid var(--train-cream);
+  border-radius: 9999px;
+  transition: all var(--transition-fast);
+}
+
+.btn-secondary:hover {
+  background-color: var(--train-cream);
+  color: var(--train-brown);
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   IMAGE CARDS — Text always readable
+   ═══════════════════════════════════════════════════════════════ */
+
+.image-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 1rem;
+}
+
+.image-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--transition-normal);
+}
+
+.image-card:hover img {
+  transform: scale(1.05);
+}
+
+/* Strong gradient overlay for text visibility */
+.image-card-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(61, 35, 20, 0.95) 0%,
+    rgba(61, 35, 20, 0.7) 30%,
+    rgba(61, 35, 20, 0.3) 60%,
+    transparent 100%
+  );
+}
+
+.image-card-content {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: var(--space-6);
+  z-index: 10;
+}
+
+.image-card-title {
+  font-size: var(--text-xl);
+  font-weight: 700;
+  color: var(--train-cream);
+  text-shadow: var(--shadow-text);
+  margin-bottom: var(--space-2);
+}
+
+.image-card-text {
+  font-size: var(--text-sm);
+  color: rgba(253, 248, 243, 0.9);
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.8);
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   TESTIMONIALS — Glass effect for readability
+   ═══════════════════════════════════════════════════════════════ */
+
+.testimonial-card {
+  background: rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 1rem;
+  padding: var(--space-6);
+}
+
+.testimonial-text {
+  color: rgba(255, 255, 255, 0.95);
+  font-style: italic;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   RESPONSIVE IMAGES
+   ═══════════════════════════════════════════════════════════════ */
+
 img {
   max-width: 100%;
   height: auto;
+  display: block;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   ANIMATIONS — Respect reduced motion
+   ═══════════════════════════════════════════════════════════════ */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+/* Bounce animation for scroll indicator */
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0) translateX(-50%);
+  }
+  50% {
+    transform: translateY(-10px) translateX(-50%);
+  }
+}
+
+.animate-bounce {
+  animation: bounce 2s ease-in-out infinite;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   FOCUS STATES — Accessibility
+   ═══════════════════════════════════════════════════════════════ */
+
+:focus-visible {
+  outline: 3px solid var(--train-gold);
+  outline-offset: 2px;
+}
+
+a:focus-visible,
+button:focus-visible {
+  outline: 3px solid var(--train-gold);
+  outline-offset: 2px;
 }
