@@ -1,0 +1,151 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+
+// Menu data - can be easily updated
+const menuSections = [
+  {
+    name: "Burgers",
+    description: "All burgers are fresh half-pound patties, served with fries or tots",
+    items: [
+      { name: "Classic Hamburger", description: "Our signature half-pound burger with lettuce, tomato, onion, pickles" },
+      { name: "Cheeseburger", description: "Classic burger topped with American cheese" },
+      { name: "Bacon Cheeseburger", description: "Topped with crispy jalapeño bacon and melted cheese", featured: true },
+      { name: "Mushroom Swiss Burger", description: "Sautéed mushrooms and Swiss cheese", featured: true },
+      { name: "Double Meat Burger", description: "For the serious appetite — two half-pound patties" },
+    ]
+  },
+  {
+    name: "Sandwiches",
+    description: "Served on fresh bread with your choice of side",
+    items: [
+      { name: "Grilled Cheese", description: "Classic comfort — melted cheese on grilled bread" },
+      { name: "BLT", description: "Crispy bacon, fresh lettuce, ripe tomato" },
+      { name: "Club Sandwich", description: "Triple-decker with turkey, ham, bacon, and all the fixings" },
+      { name: "Hot Dog", description: "All-beef hot dog with your choice of toppings" },
+      { name: "Kraut Dog", description: "Hot dog topped with sauerkraut" },
+    ]
+  },
+  {
+    name: "Soups & Salads",
+    description: "Fresh and homemade daily",
+    items: [
+      { name: "Soup of the Day", description: "Ask your server for today's homemade selection" },
+      { name: "Bowl of Soup & Half Sandwich", description: "Perfect combo — our most popular lunch deal", featured: true },
+      { name: "Garden Salad", description: "Fresh mixed greens with your choice of dressing" },
+      { name: "Chef Salad", description: "Loaded with turkey, ham, cheese, eggs, and fresh vegetables" },
+    ]
+  },
+  {
+    name: "Sides & Extras",
+    items: [
+      { name: "French Fries", description: "Golden and crispy" },
+      { name: "Tater Tots", description: "Perfectly crispy tots" },
+      { name: "Onion Rings", description: "Battered and fried to perfection" },
+      { name: "Side Salad", description: "Fresh greens with dressing" },
+    ]
+  },
+  {
+    name: "Ice Cream & Shakes",
+    description: "Blue Bell ice cream — Texas's finest",
+    items: [
+      { name: "Single Scoop", description: "One scoop of your favorite Blue Bell flavor" },
+      { name: "Double Scoop", description: "Two scoops — mix and match flavors" },
+      { name: "Milkshake", description: "Thick and creamy, made with Blue Bell ice cream" },
+      { name: "Malt", description: "Old-fashioned malted milkshake" },
+      { name: "Root Beer Float", description: "Blue Bell vanilla in cold root beer" },
+    ]
+  },
+  {
+    name: "Drinks",
+    items: [
+      { name: "Soft Drinks", description: "Coca-Cola products" },
+      { name: "Iced Tea", description: "Fresh brewed, sweet or unsweet" },
+      { name: "Lemonade", description: "Fresh-squeezed" },
+      { name: "Coffee", description: "Hot or iced" },
+      { name: "Bottled Water", description: "" },
+    ]
+  }
+];
+---
+
+<Layout title="Menu | Runaway Train Café">
+  <Header />
+  
+  <!-- Hero -->
+  <section class="bg-train-brown text-train-cream py-16 md:py-20">
+    <div class="max-w-6xl mx-auto px-4 text-center">
+      <h1 class="text-4xl md:text-5xl font-bold mb-4">Our Menu</h1>
+      <p class="text-xl opacity-90 max-w-2xl mx-auto">
+        Fresh ingredients, made-to-order meals, and the best Blue Bell ice cream in town.
+      </p>
+    </div>
+  </section>
+  
+  <!-- Note about prices -->
+  <section class="bg-train-red text-white py-4">
+    <div class="max-w-6xl mx-auto px-4 text-center">
+      <p class="flex items-center justify-center gap-2">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+          <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" />
+        </svg>
+        Call <a href="tel:+13256463333" class="font-bold underline">(325) 646-3333</a> for current prices and daily specials
+      </p>
+    </div>
+  </section>
+  
+  <!-- Menu Sections -->
+  <section class="py-12 md:py-16 bg-train-cream">
+    <div class="max-w-4xl mx-auto px-4">
+      {menuSections.map((section) => (
+        <div class="mb-12 last:mb-0">
+          <div class="border-b-2 border-train-red pb-2 mb-6">
+            <h2 class="text-2xl md:text-3xl font-bold text-train-brown">{section.name}</h2>
+            {section.description && (
+              <p class="text-train-brown/70 mt-1">{section.description}</p>
+            )}
+          </div>
+          <ul class="space-y-4">
+            {section.items.map((item) => (
+              <li class={`flex flex-col sm:flex-row sm:justify-between gap-1 ${item.featured ? 'bg-train-red/5 p-4 rounded-lg border-l-4 border-train-red' : ''}`}>
+                <div>
+                  <h3 class="font-semibold text-train-brown flex items-center gap-2">
+                    {item.name}
+                    {item.featured && (
+                      <span class="text-xs bg-train-red text-white px-2 py-0.5 rounded-full">Popular</span>
+                    )}
+                  </h3>
+                  {item.description && (
+                    <p class="text-train-brown/70 text-sm">{item.description}</p>
+                  )}
+                </div>
+              </li>
+            ))}
+          </ul>
+        </div>
+      ))}
+    </div>
+  </section>
+  
+  <!-- CTA -->
+  <section class="bg-train-brown text-train-cream py-12 text-center">
+    <div class="max-w-2xl mx-auto px-4">
+      <h2 class="text-2xl md:text-3xl font-bold mb-4">Ready to Order?</h2>
+      <p class="opacity-90 mb-6">
+        Call ahead for pickup or come on in and grab a booth!
+      </p>
+      <a 
+        href="tel:+13256463333" 
+        class="bg-train-red hover:bg-red-800 text-white px-8 py-4 rounded-full font-bold text-lg transition-colors inline-flex items-center gap-2"
+      >
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+          <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" />
+        </svg>
+        Call (325) 646-3333
+      </a>
+    </div>
+  </section>
+  
+  <Footer />
+</Layout>

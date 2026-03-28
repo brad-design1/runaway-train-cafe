@@ -1,0 +1,79 @@
+---
+const currentYear = new Date().getFullYear();
+---
+
+<footer class="bg-train-brown text-train-cream py-12 mt-auto">
+  <div class="max-w-6xl mx-auto px-4">
+    <div class="grid md:grid-cols-3 gap-8">
+      <!-- Hours -->
+      <div>
+        <h3 class="text-xl font-bold mb-4 text-train-gold">Hours</h3>
+        <ul class="space-y-2">
+          <li><span class="font-semibold">Tue - Thu:</span> 11am - 3pm</li>
+          <li><span class="font-semibold">Fri - Sat:</span> 11am - 8pm</li>
+          <li><span class="font-semibold">Sun - Mon:</span> Closed</li>
+        </ul>
+      </div>
+      
+      <!-- Location -->
+      <div>
+        <h3 class="text-xl font-bold mb-4 text-train-gold">Location</h3>
+        <address class="not-italic space-y-2">
+          <p>3600 Stephen F. Austin Dr</p>
+          <p>Brownwood, TX 76801</p>
+          <p class="mt-4">
+            <a 
+              href="https://maps.google.com/?q=3600+Stephen+F+Austin+Dr+Brownwood+TX+76801" 
+              target="_blank"
+              class="inline-flex items-center gap-2 bg-train-red hover:bg-red-800 text-white px-4 py-2 rounded-full transition-colors"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor">
+                <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd" />
+              </svg>
+              Get Directions
+            </a>
+          </p>
+        </address>
+      </div>
+      
+      <!-- Contact & Social -->
+      <div>
+        <h3 class="text-xl font-bold mb-4 text-train-gold">Connect</h3>
+        <p class="mb-4">
+          <a href="tel:+13256463333" class="text-2xl font-bold hover:text-train-gold transition-colors">
+            (325) 646-3333
+          </a>
+        </p>
+        <div class="flex gap-4">
+          <a 
+            href="https://www.facebook.com/RunawayTrainCafe" 
+            target="_blank"
+            class="hover:text-train-gold transition-colors"
+            aria-label="Facebook"
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+            </svg>
+          </a>
+          <a 
+            href="https://www.yelp.com/biz/runaway-train-cafe-brownwood" 
+            target="_blank"
+            class="hover:text-train-gold transition-colors"
+            aria-label="Yelp"
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M20.16 12.594l-4.995 1.433c-.96.276-1.74-.8-1.176-1.63l2.905-4.308a1.072 1.072 0 011.596-.206l2.42 2.218c.592.543.264 1.513-.548 1.697l-.202-.204zm-5.025 3.152l4.942 1.606c.812.264.904 1.34.164 1.746l-2.828 1.556c-.74.406-1.528-.136-1.528-.934l-.75-3.974z"/>
+              <path d="M12.34 3.094c.284-.71-.403-1.434-1.086-1.138L4.2 5.15c-.683.296-.74 1.234-.092 1.526l3.02 1.36c.324.146.708.045.93-.244l3.19-3.84c.226-.27.336-.607.092-.858zm-1.152 7.592c-.162-.936-1.206-1.24-1.838-.534l-3.4 3.79c-.632.706-.104 1.847.794 1.712l4.066-.612c.45-.068.786-.456.786-.922l.592-3.434z"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Bottom -->
+    <div class="border-t border-train-cream/20 mt-8 pt-8 text-center text-sm opacity-75">
+      <p>© {currentYear} Runaway Train Café. All rights reserved.</p>
+      <p class="mt-2">🚂 Serving Brownwood since the days of the railroads.</p>
+    </div>
+  </div>
+</footer>

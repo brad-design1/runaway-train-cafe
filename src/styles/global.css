@@ -1,0 +1,44 @@
+@import "tailwindcss";
+
+/* Custom theme colors for Runaway Train Café */
+:root {
+  --train-red: #8D2424;
+  --train-cream: #FDF8F3;
+  --train-brown: #3D2314;
+  --train-gold: #C9A227;
+  --train-charcoal: #2C2C2C;
+}
+
+/* Custom utilities */
+@layer utilities {
+  .text-train-red { color: var(--train-red); }
+  .bg-train-red { background-color: var(--train-red); }
+  .text-train-cream { color: var(--train-cream); }
+  .bg-train-cream { background-color: var(--train-cream); }
+  .text-train-brown { color: var(--train-brown); }
+  .bg-train-brown { background-color: var(--train-brown); }
+  .border-train-red { border-color: var(--train-red); }
+}
+
+/* Typography */
+body {
+  font-family: 'Georgia', serif;
+  background-color: var(--train-cream);
+  color: var(--train-brown);
+}
+
+h1, h2, h3, h4 {
+  font-family: 'Georgia', serif;
+  font-weight: 700;
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Mobile-first responsive images */
+img {
+  max-width: 100%;
+  height: auto;
+}

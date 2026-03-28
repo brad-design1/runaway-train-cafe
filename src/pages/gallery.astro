@@ -1,0 +1,70 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+
+const images = [
+  { src: "/hamburger_orig.jpg", alt: "Fresh half-pound burger", caption: "Our famous half-pound burger" },
+  { src: "/2698530_orig.jpg", alt: "Train car interior with booths", caption: "Authentic train car booths" },
+  { src: "/6185791_orig.jpg", alt: "Sandwiches and sides", caption: "Fresh sandwiches made daily" },
+  { src: "/3469504_orig.jpg", alt: "Homemade soup", caption: "Homemade soup of the day" },
+  { src: "/2407565_orig.jpg", alt: "Blue Bell ice cream", caption: "Blue Bell ice cream treats" },
+  { src: "/9548696_orig.jpg", alt: "Ice cream counter", caption: "Old-fashioned ice cream counter" },
+  { src: "/884524_orig.jpg", alt: "Train car atmosphere", caption: "Step back in time" },
+  { src: "/219173_orig.jpg", alt: "Delicious meal", caption: "Comfort food done right" },
+];
+---
+
+<Layout title="Gallery | Runaway Train Café">
+  <Header />
+  
+  <!-- Hero -->
+  <section class="bg-train-brown text-train-cream py-16 md:py-20">
+    <div class="max-w-6xl mx-auto px-4 text-center">
+      <h1 class="text-4xl md:text-5xl font-bold mb-4">Photo Gallery</h1>
+      <p class="text-xl opacity-90 max-w-2xl mx-auto">
+        Take a peek inside our authentic train car and see what's cooking!
+      </p>
+    </div>
+  </section>
+  
+  <!-- Gallery Grid -->
+  <section class="py-12 md:py-16 bg-train-cream">
+    <div class="max-w-6xl mx-auto px-4">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        {images.map((image) => (
+          <figure class="group relative overflow-hidden rounded-2xl shadow-lg">
+            <img 
+              src={image.src} 
+              alt={image.alt}
+              class="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-105"
+            />
+            <figcaption class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-4">
+              <p class="text-white text-sm font-medium">{image.caption}</p>
+            </figcaption>
+          </figure>
+        ))}
+      </div>
+      
+      <!-- More on Yelp -->
+      <div class="mt-12 text-center">
+        <p class="text-train-brown/70 mb-4">
+          Want to see more? Check out over 100 photos from our customers!
+        </p>
+        <a 
+          href="https://www.yelp.com/biz/runaway-train-cafe-brownwood" 
+          target="_blank"
+          class="bg-train-red hover:bg-red-800 text-white px-6 py-3 rounded-full font-semibold transition-colors inline-flex items-center gap-2"
+        >
+          View More on Yelp
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor">
+            <path d="M11 3a1 1 0 100 2h2.586l-6.293 6.293a1 1 0 101.414 1.414L15 6.414V9a1 1 0 102 0V4a1 1 0 00-1-1h-5z" />
+            <path d="M5 5a2 2 0 00-2 2v8a2 2 0 002 2h8a2 2 0 002-2v-3a1 1 0 10-2 0v3H5V7h3a1 1 0 000-2H5z" />
+          </svg>
+        </a>
+      </div>
+    </div>
+  </section>
+  
+  <Footer />
+</Layout>
