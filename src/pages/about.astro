@@ -4,117 +4,181 @@ import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 ---
 
-<Layout title="Our Story | Runaway Train Café">
+<Layout title="Our Story | Runaway Train Café — A Texas Landmark Since the 1940s">
   <Header />
   
   <!-- Hero -->
-  <section class="relative h-[50vh] min-h-[400px] flex items-center justify-center">
-    <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('/2698530_orig.jpg');">
-      <div class="absolute inset-0 bg-train-brown/70"></div>
+  <section class="hero-section relative h-[60vh] min-h-[450px] flex items-center justify-center overflow-hidden">
+    <div class="absolute inset-0">
+      <img 
+        src="/2698530_orig.jpg" 
+        alt="" 
+        class="w-full h-full object-cover"
+        loading="eager"
+        fetchpriority="high"
+      />
     </div>
-    <div class="relative z-10 text-center px-4">
-      <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-train-cream mb-4">
-        Our Story
+    <div class="absolute inset-0 bg-gradient-to-b from-train-brown/60 via-train-brown/70 to-train-brown/90"></div>
+    <div class="absolute inset-0 bg-black/20"></div>
+    <div class="hero-content relative z-10 text-center px-6">
+      <p class="text-train-gold font-bold tracking-[0.25em] uppercase mb-4 text-sm text-shadow">A Texas Landmark</p>
+      <h1 class="hero-title mb-6">
+        80 Years of Railroad History
       </h1>
-      <p class="text-xl text-train-cream/90">
-        Serving Brownwood in an authentic train car since day one.
+      <p class="hero-subtitle">
+        This isn't just a restaurant. It's a piece of Texas that refused to disappear.
       </p>
     </div>
   </section>
   
-  <!-- Story Content -->
-  <section class="py-16 md:py-24 bg-train-cream">
-    <div class="max-w-4xl mx-auto px-4">
-      <div class="prose prose-lg max-w-none">
-        <p class="text-xl text-train-brown leading-relaxed mb-8">
-          Runaway Train Café is the most popular and unique café to eat in Brownwood. As soon as you 
-          walk in, you feel what it was like to dine in an authentic dining train car with all of its 
-          originality. You are always greeted by our friendly staff to take a seat in one of their 
-          booths or on a stool at the old-fashioned ice cream counter.
+  <!-- The Full Story -->
+  <section class="py-20 md:py-28 bg-train-cream">
+    <div class="max-w-4xl mx-auto px-6">
+      
+      <!-- Opening -->
+      <div class="mb-16">
+        <h2 class="text-3xl md:text-4xl font-bold text-train-brown mb-8">
+          You're sitting where travelers sat 80 years ago.
+        </h2>
+        <p class="text-xl text-train-brown/80 leading-relaxed mb-6">
+          In the 1940s, this train car was rolling through Texas, serving hot meals to passengers 
+          traveling across the state. The dining car was the heart of long-distance rail travel — 
+          white tablecloths, real silverware, and food cooked on board.
         </p>
-        
-        <div class="my-12 grid md:grid-cols-2 gap-8">
-          <img 
-            src="/9548696_orig.jpg" 
-            alt="Interior of Runaway Train Café" 
-            class="rounded-2xl shadow-lg w-full"
-          />
-          <img 
-            src="/884524_orig.jpg" 
-            alt="Authentic train car details" 
-            class="rounded-2xl shadow-lg w-full"
-          />
-        </div>
-        
-        <h2 class="text-3xl font-bold text-train-brown mt-12 mb-6">The Best Burgers in Town</h2>
-        
-        <p class="text-lg text-train-brown/80 leading-relaxed mb-6">
-          All our burgers are fresh half-pound burgers that you can order with or without cheese. 
-          Customer favorites include the bacon cheeseburger with jalapeño bacon and the mushroom 
-          & Swiss burger. All our burgers are served with either delicious French fries or tots. 
-          Also be sure to try beef hot dogs or the kraut.
-        </p>
-        
-        <p class="text-xl text-train-red font-semibold italic my-8">
-          "We have the best burgers you'll ever taste!"
-        </p>
-        
-        <h2 class="text-3xl font-bold text-train-brown mt-12 mb-6">More Than Burgers</h2>
-        
-        <p class="text-lg text-train-brown/80 leading-relaxed mb-6">
-          We also serve amazing sandwiches and homemade soup. For the best of both worlds, definitely 
-          get the bowl of soup and half sandwich deal! Tasty appetizers and crisp salads are also available.
-        </p>
-        
-        <p class="text-lg text-train-brown/80 leading-relaxed mb-6">
-          After your mouth watering meal, don't forget to try a single or double scoop of homemade 
-          Blue Bell ice cream!
-        </p>
-        
-        <div class="my-12">
-          <img 
-            src="/219173_orig.jpg" 
-            alt="Delicious food at Runaway Train Café" 
-            class="rounded-2xl shadow-lg w-full"
-          />
-        </div>
-        
-        <h2 class="text-3xl font-bold text-train-brown mt-12 mb-6">Visit Us Today</h2>
-        
-        <p class="text-lg text-train-brown/80 leading-relaxed mb-8">
-          Whether you're a Brownwood local or just passing through, make sure to stop by the Runaway 
-          Train Café for a meal you won't forget. Our friendly staff and unique atmosphere make every 
-          visit special.
+        <p class="text-xl text-train-brown/80 leading-relaxed">
+          When the age of rail travel ended, most of these dining cars were scrapped. Not this one. 
+          It found a home in Brownwood, Texas, and became something new: a place where families 
+          could experience that same feeling of sitting down to a real meal in a real train car.
         </p>
       </div>
       
-      <!-- CTA -->
-      <div class="mt-12 bg-train-brown text-train-cream rounded-2xl p-8 md:p-12 text-center">
-        <h3 class="text-2xl font-bold mb-4">Come See Us!</h3>
-        <p class="text-lg opacity-90 mb-6">
-          3600 Stephen F. Austin Dr, Brownwood, TX 76801
+      <!-- Photo break -->
+      <div class="my-16 grid md:grid-cols-2 gap-6">
+        <img 
+          src="/9548696_orig.jpg" 
+          alt="The original ice cream counter" 
+          class="rounded-2xl shadow-xl w-full"
+          loading="lazy"
+          width="600"
+          height="400"
+        />
+        <img 
+          src="/884524_orig.jpg" 
+          alt="Vintage train car details" 
+          class="rounded-2xl shadow-xl w-full"
+          loading="lazy"
+          width="600"
+          height="400"
+        />
+      </div>
+      
+      <!-- The Experience -->
+      <div class="mb-16">
+        <h2 class="text-3xl md:text-4xl font-bold text-train-brown mb-8">
+          Walk in. Time travel back.
+        </h2>
+        <p class="text-xl text-train-brown/80 leading-relaxed mb-6">
+          The moment you step inside, you feel it. The curved ceiling. The narrow walkway between booths. 
+          The windows that once showed miles of Texas prairie rolling by. We kept everything intact — 
+          the original booths, the stools at the counter, the chrome fixtures.
         </p>
-        <div class="flex flex-col sm:flex-row gap-4 justify-center">
-          <a 
-            href="tel:+13256463333" 
-            class="bg-train-red hover:bg-red-800 text-white px-6 py-3 rounded-full font-semibold transition-colors inline-flex items-center justify-center gap-2"
-          >
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
-              <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" />
-            </svg>
-            Call (325) 646-3333
-          </a>
-          <a 
-            href="https://maps.google.com/?q=3600+Stephen+F+Austin+Dr+Brownwood+TX+76801" 
-            target="_blank"
-            class="bg-train-gold hover:bg-yellow-600 text-train-brown px-6 py-3 rounded-full font-semibold transition-colors inline-flex items-center justify-center gap-2"
-          >
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
-              <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd" />
-            </svg>
-            Get Directions
-          </a>
-        </div>
+        <p class="text-xl text-train-brown/80 leading-relaxed">
+          The ice cream counter is the same one where railroad passengers once ordered malts and floats 
+          between Amarillo and Houston. Your kids can sit on the same stools, spinning the way kids have 
+          spun on those stools for 80 years.
+        </p>
+      </div>
+      
+      <!-- Quote callout -->
+      <blockquote class="my-16 bg-train-brown rounded-2xl p-10 text-center">
+        <p class="text-2xl md:text-3xl text-train-cream font-semibold italic mb-6 text-shadow">
+          "This isn't just a diner. It's a Texas landmark. We're just the ones lucky enough to keep it running."
+        </p>
+        <footer class="text-train-gold font-bold">— Kim B., Owner</footer>
+      </blockquote>
+      
+      <!-- The Food -->
+      <div class="mb-16">
+        <h2 class="text-3xl md:text-4xl font-bold text-train-brown mb-8">
+          The food is simple. That's the point.
+        </h2>
+        <p class="text-xl text-train-brown/80 leading-relaxed mb-6">
+          Half-pound burgers, made with fresh beef we grind ourselves. Homemade soup, different every day. 
+          Sandwiches built on real bread. Blue Bell ice cream, because this is Texas and there's no other choice.
+        </p>
+        <p class="text-xl text-train-brown/80 leading-relaxed mb-6">
+          No fancy plating. No foam or drizzles. Just honest food, cooked when you order it, served by 
+          people who know your name after a few visits.
+        </p>
+        <p class="text-xl text-train-brown/80 leading-relaxed">
+          Our customers' favorites haven't changed in years: the <strong>Jalapeño Bacon Cheeseburger</strong> 
+          and the <strong>Mushroom Swiss</strong>. Ask for the soup and half sandwich combo — it's the 
+          lunch that regulars order without looking at a menu.
+        </p>
+      </div>
+      
+      <!-- Photo break -->
+      <div class="my-16">
+        <img 
+          src="/hamburger_orig.jpg" 
+          alt="Fresh half-pound burger" 
+          class="rounded-2xl shadow-xl w-full"
+          loading="lazy"
+          width="800"
+          height="500"
+        />
+      </div>
+      
+      <!-- Small Town -->
+      <div class="mb-16">
+        <h2 class="text-3xl md:text-4xl font-bold text-train-brown mb-8">
+          Brownwood's gathering spot.
+        </h2>
+        <p class="text-xl text-train-brown/80 leading-relaxed mb-6">
+          Friday nights here are loud. Families pile in after games. Tourists stop on their way through. 
+          Regulars grab their usual booth. The counter fills up with people who've been coming here 
+          since they were kids, now bringing their own kids.
+        </p>
+        <p class="text-xl text-train-brown/80 leading-relaxed">
+          That's what a train car diner is supposed to be — not a museum, not a themed attraction, 
+          but a real place where real people eat real food. We've been doing this since the days 
+          of the railroads, and we're not planning to stop.
+        </p>
+      </div>
+      
+    </div>
+  </section>
+  
+  <!-- CTA -->
+  <section class="py-20 md:py-28 bg-train-brown">
+    <div class="max-w-3xl mx-auto px-6 text-center">
+      <h2 class="text-3xl md:text-5xl font-bold text-train-cream mb-8 text-shadow">
+        Come see it for yourself.
+      </h2>
+      <p class="text-xl text-train-cream/80 mb-10">
+        3600 Stephen F. Austin Dr, Brownwood, TX 76801<br/>
+        <span class="text-train-gold font-semibold">Right off Highway 377</span>
+      </p>
+      <div class="flex flex-col sm:flex-row gap-5 justify-center">
+        <a 
+          href="tel:+13256463333" 
+          class="btn-primary text-xl inline-flex items-center justify-center gap-3"
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" viewBox="0 0 20 20" fill="currentColor">
+            <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" />
+          </svg>
+          (325) 646-3333
+        </a>
+        <a 
+          href="https://maps.google.com/?q=3600+Stephen+F+Austin+Dr+Brownwood+TX+76801" 
+          target="_blank"
+          class="btn-secondary text-xl inline-flex items-center justify-center gap-3"
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" viewBox="0 0 20 20" fill="currentColor">
+            <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd" />
+          </svg>
+          Get Directions
+        </a>
       </div>
     </div>
   </section>

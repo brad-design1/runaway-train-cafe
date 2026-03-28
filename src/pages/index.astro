@@ -20,9 +20,10 @@ import Footer from '../components/Footer.astro';
       />
     </div>
     
-    <!-- Gradient Overlay — Multiple layers for text visibility -->
-    <div class="absolute inset-0 bg-gradient-to-b from-train-brown/50 via-train-brown/60 to-train-brown/90"></div>
-    <div class="absolute inset-0 bg-gradient-to-t from-train-brown/80 via-transparent to-transparent"></div>
+    <!-- Gradient Overlay — Stronger layers for guaranteed text visibility -->
+    <div class="absolute inset-0 bg-gradient-to-b from-train-brown/60 via-train-brown/70 to-train-brown/95"></div>
+    <div class="absolute inset-0 bg-gradient-to-t from-train-brown/90 via-train-brown/30 to-transparent"></div>
+    <div class="absolute inset-0 bg-black/20"></div>
     
     <!-- Content -->
     <div class="hero-content relative z-10 text-center px-6 max-w-5xl mx-auto">
@@ -160,16 +161,22 @@ import Footer from '../components/Footer.astro';
             Every burger here starts at 8 ounces. We grind the beef ourselves, form the patties by hand, 
             and cook them when you order. Not before. Nothing sits under a heat lamp.
           </p>
-          <div class="bg-train-cream/10 rounded-2xl p-8 mb-10 border border-train-cream/20">
-            <p class="text-train-gold font-bold mb-4 text-lg">Customer favorites:</p>
-            <ul class="space-y-3 text-train-cream/90 text-lg">
-              <li class="flex items-center gap-3">
-                <span class="text-train-gold text-xl">→</span>
-                <strong>Jalapeño Bacon Cheeseburger</strong> — spicy bacon, melted cheddar
+          <div class="bg-white/15 backdrop-blur-sm rounded-2xl p-8 mb-10 border border-train-gold/30 shadow-lg">
+            <p class="text-train-gold font-bold mb-5 text-xl">🔥 Customer favorites:</p>
+            <ul class="space-y-4 text-lg">
+              <li class="flex items-start gap-4 bg-white/10 rounded-xl p-4">
+                <span class="text-train-gold text-2xl">→</span>
+                <div>
+                  <strong class="text-train-cream text-xl">Jalapeño Bacon Cheeseburger</strong>
+                  <p class="text-train-cream/80 mt-1">Spicy bacon, melted cheddar, fresh jalapeños</p>
+                </div>
               </li>
-              <li class="flex items-center gap-3">
-                <span class="text-train-gold text-xl">→</span>
-                <strong>Mushroom Swiss</strong> — sautéed mushrooms, Swiss cheese
+              <li class="flex items-start gap-4 bg-white/10 rounded-xl p-4">
+                <span class="text-train-gold text-2xl">→</span>
+                <div>
+                  <strong class="text-train-cream text-xl">Mushroom Swiss</strong>
+                  <p class="text-train-cream/80 mt-1">Sautéed mushrooms, melted Swiss cheese</p>
+                </div>
               </li>
             </ul>
           </div>
@@ -190,6 +197,52 @@ import Footer from '../components/Footer.astro';
             height="500"
           />
         </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Food Photo Strip — Make Stomachs Growl -->
+  <section class="py-8 bg-train-cream overflow-hidden">
+    <div class="flex gap-4 animate-none md:grid md:grid-cols-4">
+      <div class="shrink-0 w-72 md:w-auto overflow-hidden rounded-xl shadow-lg">
+        <img 
+          src="/hamburger_orig.jpg" 
+          alt="Half-pound burger" 
+          class="w-full h-48 object-cover hover:scale-105 transition-transform"
+          loading="lazy"
+          width="288"
+          height="192"
+        />
+      </div>
+      <div class="shrink-0 w-72 md:w-auto overflow-hidden rounded-xl shadow-lg">
+        <img 
+          src="/3469504_orig.jpg" 
+          alt="Homemade soup" 
+          class="w-full h-48 object-cover hover:scale-105 transition-transform"
+          loading="lazy"
+          width="288"
+          height="192"
+        />
+      </div>
+      <div class="shrink-0 w-72 md:w-auto overflow-hidden rounded-xl shadow-lg">
+        <img 
+          src="/9548696_orig.jpg" 
+          alt="Ice cream counter" 
+          class="w-full h-48 object-cover hover:scale-105 transition-transform"
+          loading="lazy"
+          width="288"
+          height="192"
+        />
+      </div>
+      <div class="shrink-0 w-72 md:w-auto overflow-hidden rounded-xl shadow-lg">
+        <img 
+          src="/219173_orig.jpg" 
+          alt="Fresh food" 
+          class="w-full h-48 object-cover hover:scale-105 transition-transform"
+          loading="lazy"
+          width="288"
+          height="192"
+        />
       </div>
     </div>
   </section>
